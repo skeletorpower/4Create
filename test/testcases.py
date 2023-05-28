@@ -35,6 +35,18 @@ class TestCases(webdriver.Firefox):
     def add_three_random_items_to_cart(self):
         items = self.find_elements(By.CLASS_NAME, 'product-action')
 
+        # I tried bonus task in here, but couldn't figure out how to take out most expensive
+        # and cheapest items. I got the prices from the elements but not the element itself
+        # If I managed to do that the task would be done. We can have a brief discussion about that
+
+        # product_prices = self.find_elements(By.CLASS_NAME, 'product-price')
+        # all_prices = [price.get_attribute('textContent') for price in product_prices]
+
+        # most_expensive_item = max(all_prices)
+        # cheapest_item = min(all_prices)
+        # print(all_prices)
+        # print(max(all_prices))
+
         for i in range(3):
             item = random.choice(items)
             item.click()
